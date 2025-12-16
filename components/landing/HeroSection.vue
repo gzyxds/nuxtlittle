@@ -107,6 +107,45 @@
 
          <!-- 主视觉层（添加高斯模糊） -->
          <div class="absolute inset-0 bg-primary-500/20 blur-[60px] md:blur-[80px] -z-20 rounded-full"></div>
+
+         <!-- 悬浮标签 -->
+         <div class="absolute inset-0 z-20 pointer-events-none">
+           <!-- 智能体 -->
+           <div class="absolute top-[15%] left-[2%] md:-left-[2%] animate-float-slow">
+             <div class="px-4 py-2 rounded-lg bg-black/40 border border-white/10 backdrop-blur-md text-white/90 text-sm font-medium shadow-lg flex items-center gap-2">
+               <div class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></div>
+               智能体
+             </div>
+           </div>
+           <!-- 工作流 -->
+           <div class="absolute top-[25%] right-[2%] md:-right-[2%] animate-float-medium animation-delay-500">
+             <div class="px-4 py-2 rounded-lg bg-black/40 border border-white/10 backdrop-blur-md text-white/90 text-sm font-medium shadow-lg flex items-center gap-2">
+               <div class="w-2 h-2 rounded-full bg-blue-400 animate-pulse"></div>
+               工作流
+             </div>
+           </div>
+           <!-- 知识库 -->
+           <div class="absolute bottom-[35%] left-[4%] md:-left-[4%] animate-float-fast animation-delay-1000">
+             <div class="px-4 py-2 rounded-lg bg-black/40 border border-white/10 backdrop-blur-md text-white/90 text-sm font-medium shadow-lg flex items-center gap-2">
+               <div class="w-2 h-2 rounded-full bg-yellow-400 animate-pulse"></div>
+               知识库
+             </div>
+           </div>
+           <!-- MCP服务 -->
+           <div class="absolute bottom-[20%] right-[5%] md:right-[0%] animate-float-slow animation-delay-1500">
+             <div class="px-4 py-2 rounded-lg bg-black/40 border border-white/10 backdrop-blur-md text-white/90 text-sm font-medium shadow-lg flex items-center gap-2">
+               <div class="w-2 h-2 rounded-full bg-purple-400 animate-pulse"></div>
+               MCP服务
+             </div>
+           </div>
+           <!-- 大模型 -->
+           <div class="absolute bottom-[5%] left-[30%] animate-float-medium animation-delay-2000">
+             <div class="px-4 py-2 rounded-lg bg-black/40 border border-white/10 backdrop-blur-md text-white/90 text-sm font-medium shadow-lg flex items-center gap-2">
+               <div class="w-2 h-2 rounded-full bg-red-400 animate-pulse"></div>
+               大模型
+             </div>
+           </div>
+         </div>
        </div>
     </div>
   </section>
@@ -143,5 +182,38 @@ onUnmounted(() => {
 <style scoped>
 .perspective-1000 {
   perspective: 1000px;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float-slow {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-medium {
+  animation: float 5s ease-in-out infinite;
+}
+
+.animate-float-fast {
+  animation: float 4s ease-in-out infinite;
+}
+
+.animation-delay-500 {
+  animation-delay: 500ms;
+}
+
+.animation-delay-1000 {
+  animation-delay: 1000ms;
+}
+
+.animation-delay-1500 {
+  animation-delay: 1500ms;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2000ms;
 }
 </style>
