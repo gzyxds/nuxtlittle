@@ -7,7 +7,6 @@
     <LandingProductFeatures />
     <LandingProductDesign />
     <LandingCallToAction />
-    <LandingAppFooter />
   </div>
 </template>
 
